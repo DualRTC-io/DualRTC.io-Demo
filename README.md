@@ -88,7 +88,7 @@ $ gulp
 ### Run node app
 Alternatively, when not using `gulp` (and for production environments) you can run:
 ```bash
-$ node app.js
+$ node server.js
 ```
 
 Then, open a browser and go to:
@@ -99,16 +99,16 @@ https://YOUR_IP_ADDRESS
 ### [Option] Load balancing
 When an app is started with the -i option, the cluster mode is enabled.
 ```bash
-# Enable load-balancer and cluster features
-$ pm2 start app.js -i 0
+# Enable load-balancer and cluster feature
+$ pm2 start server.js -i 0 --name "appName"
 
 # Listing your app running processes:
-$ pm2 list app.js
+$ pm2 list appName
 
 # Managing your processes is straightforward:
-$ pm2 stop app.js
-$ pm2 restart app.js
-$ pm2 delete app.js
+$ pm2 stop appName
+$ pm2 restart appName
+$ pm2 delete appName
 ```
 
 # Reference
