@@ -1,0 +1,85 @@
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko")
+  head
+    meta(http-equiv="content-type" content="text/html; charset=UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    title DualRTC - Dual Monitor System based WebRTC
+
+    link(rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
+    link(rel="stylesheet" type="text/css" href="css/style.css")
+    link(rel="stylesheet" type="text/css" href="css/nprogress.css")
+
+    script(type="text/javascript" data-main="system/main" src="vendor/require.js")
+    script(type="text/javascript" src="vendor/jquery-2.1.4.min.js")
+    script(type="text/javascript" src="vendor/firebase.js")
+
+  body(ng-controller="CommonCtrl")
+
+    <!--[if lte IE 8]>
+    div.alert.alert-danger.text-center(style="width:100%; position:absolute; top:0; left:0; z-index:1040;")
+      button.close(type="button" data-dismiss="alert") &times;
+      | 본 사이트는 <strong>크롬(Chrome)</strong>과 <strong>인터넷 익스플로러(Internet Explorer) 9</strong> 이상 웹 브라우저에 최적화되어 있습니다.
+      | <br/>다음 사이트를 방문하시기 바랍니다. <a href="http://browsehappy.com" target="_blanl">http://browsehappy.com</a>
+    <![endif]-->
+
+    div#container.hide.container
+      div(error-bar message="errorService.errorMessage")
+
+      header
+        p.pull-right: span.badge
+          span.glyphicon.glyphicon-user
+          |  {{userCount}}
+        h3
+          a(href="/") DualRTC
+          small.mgl2 Dual Monitor System based WebRTC
+      hr
+
+      div.panel.panel-success#divMakeRoom(style="display:block")
+        div.panel-heading
+          span.glyphicon.glyphicon-home
+          |  Create your room
+        div.panel-body
+          div.input-group
+            span.input-group-addon: span.glyphicon.glyphicon-lock
+            input.form-control#makeName(type="text" placeholder="Insert room name.")
+            span.input-group-btn
+              button.btn.btn-success#btnCopy(title="Copy room name")
+                span.glyphicon.glyphicon-share
+              button.btn.btn-success#btnMakeRoom(title="Create your name")
+                span.glyphicon.glyphicon-log-in
+
+      div.panel.panel-info(id="divJoinRoom" style="display:block")
+        div.panel-heading
+          span.glyphicon.glyphicon-home
+          |  Join the room
+        div.panel-body
+          div.input-group
+            span.input-group-addon: span.glyphicon.glyphicon-search
+            input.form-control#joinName(type="text" placeholder="Insert room name.")
+            span.input-group-btn
+              button.btn.btn-info#btnJoinRoom(title="Join the room")
+                span.glyphicon.glyphicon-log-in
+
+      <!-- local/remote videos container -->
+      div.panel.panel-warning#divScreen(style="display:none")
+        div.panel-heading
+          span.glyphicon.glyphicon-play
+          |  Screen
+        div.panel-content
+          div#videos-container
+
+      hr
+
+      div.row
+        div.col-xs-12(ng-view)
+
+      hr
+      footer
+        p Developed by <a href="https://dualrtc-io.github.io/"><strong>Team.DualRTC</strong></a> and Cover template by <a href="http://www.tested.co.kr" target="_blank">Tested</a>.
+
+    script(type="text/javascript" src="dualrtc/dualrtc.js")
+    script(type="text/javascript" src="dualrtc/adapter.js")
+    script(type="text/javascript" src="dualrtc/detectrtc.js")
+    script(type="text/javascript" src="dualrtc/screenShare.js")

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DualRTC - Dual Monitor System based WebRTC</title>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/nprogress.css">
+    <script type="text/javascript" data-main="system/main" src="vendor/require.js"></script>
+    <script type="text/javascript" src="vendor/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="vendor/firebase.js"></script>
+  </head>
+  <body ng-controller="CommonCtrl"><!--[if lte IE 8]>
+    <div style="width:100%; position:absolute; top:0; left:0; z-index:1040;" class="alert alert-danger text-center">
+      <button type="button" data-dismiss="alert" class="close">&times;</button>본 사이트는 <strong>크롬(Chrome)</strong>과 <strong>인터넷 익스플로러(Internet Explorer) 9</strong> 이상 웹 브라우저에 최적화되어 있습니다.
+      <br/>다음 사이트를 방문하시기 바랍니다. <a href="http://browsehappy.com" target="_blanl">http://browsehappy.com</a>
+    </div><![endif]-->
+    <div id="container" class="hide container">
+      <div error-bar message="errorService.errorMessage"></div>
+      <header>
+        <p class="pull-right"><span class="badge"><span class="glyphicon glyphicon-user"></span> {{userCount}}</span></p>
+        <h3><a href="/">DualRTC</a><small class="mgl2">Dual Monitor System based WebRTC</small></h3>
+      </header>
+      <hr>
+      <div id="divMakeRoom" style="display:block" class="panel panel-success">
+        <div class="panel-heading"><span class="glyphicon glyphicon-home"></span> Create your room</div>
+        <div class="panel-body">
+          <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+            <input id="makeName" type="text" placeholder="Insert room name." class="form-control"><span class="input-group-btn">
+              <button id="btnCopy" title="Copy room name" class="btn btn-success"><span class="glyphicon glyphicon-share"></span></button>
+              <button id="btnMakeRoom" title="Create your name" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span></button></span>
+          </div>
+        </div>
+      </div>
+      <div id="divJoinRoom" style="display:block" class="panel panel-info">
+        <div class="panel-heading"><span class="glyphicon glyphicon-home"></span> Join the room</div>
+        <div class="panel-body">
+          <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+            <input id="joinName" type="text" placeholder="Insert room name." class="form-control"><span class="input-group-btn">
+              <button id="btnJoinRoom" title="Join the room" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span></button></span>
+          </div>
+        </div>
+      </div><!-- local/remote videos container -->
+      <div id="divScreen" style="display:none" class="panel panel-warning">
+        <div class="panel-heading"><span class="glyphicon glyphicon-play"></span> Screen</div>
+        <div class="panel-content">
+          <div id="videos-container"></div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div ng-view class="col-xs-12"></div>
+      </div>
+      <hr>
+      <footer>
+        <p>Developed by <a href="https://dualrtc-io.github.io/"><strong>Team.DualRTC</strong></a> and Cover template by <a href="http://www.tested.co.kr" target="_blank">Tested</a>.</p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="dualrtc/dualrtc.js"></script>
+    <script type="text/javascript" src="dualrtc/adapter.js"></script>
+    <script type="text/javascript" src="dualrtc/detectrtc.js"></script>
+    <script type="text/javascript" src="dualrtc/screenShare.js"></script>
+  </body>
+</html>

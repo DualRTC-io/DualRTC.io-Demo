@@ -1,3 +1,5 @@
+.DS_STORE
+
 # Logs
 logs
 *.log
@@ -25,3 +27,29 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+build
+components
+
+# Keys
+key/
+*.pem
+*.key
+*.crt
+*.csr
+
+# nginx log
+log/
+
+# Include when developing application packages.
+pubspec.lock
+.c9
+.idea/
+.settings/
+*.swo
+modules/.settings
+.vscode
+modules/.vscode
+
+# Ignore npm debug log
+npm-debug.log
+

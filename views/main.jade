@@ -1,0 +1,46 @@
+//
+//form(name="pollMain")
+//  div.clearfix
+//    p.pull-left: a.btn.btn-primary(href="#/poll/new")
+//      span.glyphicon.glyphicon-pencil
+//      |  방 등록
+//    p.pull-right.text-primary
+//      span.glyphicon.glyphicon-list-alt
+//      |  총 {{count}}건 등록
+//
+//  div.panel.panel-default
+//    div.panel-heading
+//      span.glyphicon.glyphicon-cog
+//      |  방 들어가기
+//    div.panel-body
+//      div.input-group
+//        span.input-group-addon: span.glyphicon.glyphicon-lock
+//        input.form-control(type="text" ng-model="roomName" placeholder="방 이름 입력해 쉥키야.")
+//        span.input-group-btn
+//          button.btn.btn-info(type="button" ng-click="joinRoom()" ng-disabled="!roomName")
+//            span.glyphicon.glyphicon-log-in
+//
+//  div.panel.panel-success
+//    div.panel-heading
+//      span.glyphicon.glyphicon-home
+//      |  방 입장
+//    div.panel-body
+//      div.input-group
+//        span.input-group-addon: span.glyphicon.glyphicon-search
+//        input.form-control(type="text" name="ticket" ng-model="ticket" maxlength="4" placeholder="방 번호를 입력하세요." ng-pattern="/^[0-9]{4}$/", required)
+//        span.input-group-btn
+//          button.btn.btn-success(type="button" ng-click="goTicket()" ng-disabled="pollMain.ticket.$invalid")
+//            span.glyphicon.glyphicon-log-in
+//      div.input-group
+//        span.input-group-addon: span.glyphicon.glyphicon-lock
+//        input.form-control(type="password" ng-model="password" maxlength="4" placeholder="비밀번호가 있을 때 입력하세요.")
+//
+//
+//div.panel.panel-warning
+//  div.panel-heading
+//    span.glyphicon.glyphicon-th-list
+//    |  최근 공개 방 리스트
+//  div.list-group
+//    a.list-group-item(ng-repeat="poll in polls")
+//      span.label(class="label-{{poll.label}}"): span.glyphicon.glyphicon-stats
+//      |  {{poll.title}}
