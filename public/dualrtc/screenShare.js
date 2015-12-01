@@ -73,7 +73,7 @@ var config = {
     onNewParticipant: function(numberOfParticipants) {
         console.log('s7');
 
-        document.title = numberOfParticipants + ' users are viewing your screen!';
+        //document.title = numberOfParticipants + ' users are viewing your screen!';
     },
     oniceconnectionstatechange: function(state) {
         console.log('s8');
@@ -211,14 +211,20 @@ var secure = (Math.random() * new Date().getTime()).toString(36).toUpperCase().r
 var makeName = $('#makeName');
 var joinName = $('#joinName');
 
-var btnJoinRoom = $('#btnMakeRoom');
+var btnMakeRoom = $('#btnMakeRoom');
 var btnJoinRoom = $('#btnJoinRoom');
+var btnCopy = $('#btnCopy');
 
 var divMake = $('#divMakeRoom');
 var divJoin = $('#divJoinRoom');
 var divScreen = $('#divScreen');
 
-$('#btnMakeRoom').click(function () {
+// about description
+var divInstallCE01 = $('#divInstallCE01');
+var divInstallCE02 = $('#divInstallCE02');
+var divWikiWDDM = $('#divWikiWDDM');
+
+btnMakeRoom.click(function () {
     if (makeName.val()) {
         makeName.attr('disabled', true);
         btnJoinRoom.attr('disabled', true);
@@ -229,7 +235,7 @@ $('#btnMakeRoom').click(function () {
     }
 });
 
-$('#btnJoinRoom').click(function () {
+btnJoinRoom.click(function () {
     if (joinName.val()) {
         joinName.attr('disabled', true);
         btnJoinRoom.attr('disabled', true);
@@ -238,7 +244,7 @@ $('#btnJoinRoom').click(function () {
     }
 });
 
-$('#btnCopy').click(function () {
+btnCopy.click(function () {
     makeName.select();
 
     try {
@@ -249,6 +255,18 @@ $('#btnCopy').click(function () {
     } catch(err) {
         console.log('Oops, unable to copy');
     }
+});
+
+divInstallCE01.click(function () {
+    window.open('about:black').location.href = 'https://chrome.google.com/webstore/detail/desktopcapture/mhpddeoilenchcefgimjlbbccdiepnnk';
+});
+
+divInstallCE02.click(function () {
+    window.open('about:black').location.href = 'https://chrome.google.com/webstore/detail/dualrtcio/kdgjponegkkhkigjlknapimncipajbpi';
+});
+
+divWikiWDDM.click(function () {
+    window.open('about:black').location.href = 'https://dualrtc-io.github.io/';
 });
 
 (function() {

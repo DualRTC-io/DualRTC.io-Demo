@@ -63,6 +63,15 @@ html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko")
               button.btn.btn-info#btnJoinRoom(title="Join the room")
                 span.glyphicon.glyphicon-log-in
 
+      div.panel.panel-warning#divDescript(style="display:block")
+        div.panel-heading
+          span.glyphicon.glyphicon-list-alt
+          |  Description
+        div.list-group
+          a.list-group-item.list-group-item-danger#divInstallCE01(type="button" href="") Install chrome extension - Internal
+          a.list-group-item.list-group-item-info#divInstallCE02(type="button" href="") Install chrome extension - External
+          a.list-group-item.list-group-item-success#divWikiWDDM(type="button" href="") Wiki for Windows Display Device Driver
+
       <!-- local/remote videos container -->
       div.panel.panel-warning#divScreen(style="display:none")
         div.panel-heading
@@ -70,8 +79,6 @@ html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko")
           |  Screen
         div.panel-content
           div#videos-container
-
-      hr
 
       div.row
         div.col-xs-12(ng-view)
