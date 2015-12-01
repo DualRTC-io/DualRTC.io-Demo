@@ -70,7 +70,7 @@ $ npm install -g pm2
 The easiest way to get started is to clone the repository:
 ```bash
 # Get the latest snapshot
-$ git clone https://github.com/DualRTC-io/DualRTC.io.git myproject
+$ git clone https://github.com/DualRTC-io/DualRTC.io-Demo.git myproject
 $ cd myproject
 $ git remote rm origin
 
