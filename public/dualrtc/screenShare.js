@@ -220,6 +220,7 @@ var divJoin = $('#divJoinRoom');
 var divScreen = $('#divScreen');
 
 // about description
+var divDescript = $('#divDescript');
 var divInstallCE01 = $('#divInstallCE01');
 var divInstallCE02 = $('#divInstallCE02');
 var divWikiWDDM = $('#divWikiWDDM');
@@ -281,6 +282,7 @@ divWikiWDDM.click(function () {
         if (divMake.css('display') == 'block') $('#divMakeRoom').hide();
         if (divJoin.css('display') == 'block') $('#divJoinRoom').hide();
         if (divScreen.css('display') == 'none') $('#divScreen').show();
+        if (divDescript.css('display') == 'block') $('#divDescript').hide();
 
         captureUserMedia(function() {
             dualrtcUI.createRoom({
